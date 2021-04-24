@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Property
 {
 
-    const HEAT = [0 => 'gaz', 1 => 'electric', 2 => 'fuel', 3 => 'charbon de bois', 4 => 'autre' ]
+    const HEAT = [0 => 'gaz', 1 => 'electric', 2 => 'fuel', 3 => 'charbon de bois', 4 => 'autre' ];
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -73,22 +73,24 @@ class Property
     /**
      * @ORM\Column(type="boolean", options={"default": false })
      */
-    private $sold;
+    private $sold = false;
 
     /**
      * @ORM\Column(type="datetime")
      */
     private $create_at;
 
+    public function __construct()
+    {
+        $this->create_at = new DateTime();       
+    }
+
     /**
      * @ORM\Column(type="integer")
      */
     private $bedrooms;
 
-    public function __construct()
-    {
-        $this->setCreateAt = new DateTime();
-    }
+    
 
     public function getId(): ?int
     {
@@ -139,6 +141,18 @@ class Property
     public function setRooms(int $rooms): self
     {
         $this->rooms = $rooms;
+
+        return $this;
+    }
+
+    public function getBedrooms(): ?int
+    {
+        return $this->bedrooms;
+    }
+
+    public function setBedrooms(int $bedrooms): self
+    {
+        $this->bedrooms = $bedrooms;
 
         return $this;
     }
@@ -239,15 +253,5 @@ class Property
         return $this;
     }
 
-    public function getBedrooms(): ?int
-    {
-        return $this->bedrooms;
-    }
-
-    public function setBedrooms(int $bedrooms): self
-    {
-        $this->bedrooms = $bedrooms;
-
-        return $this;
-    }
+    
 }
