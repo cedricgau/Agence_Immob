@@ -4,9 +4,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Property;
 use App\Repository\PropertyRepository;
-use Doctrine\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 class PropertyController extends AbstractController{
 
@@ -17,13 +16,13 @@ class PropertyController extends AbstractController{
     private $repository;
 
 /**
-*@var ObjectManager
+*@var EntityManagerInterface
 */
 
     private $om;
 
-    public function __construct(PropertyRepository $repository) {
-        #$this->om = $om;
+    public function __construct(PropertyRepository $repository, EntityManagerInterface $om) {
+        $this->om = $om;
         $this->repository = $repository;
     }
 
@@ -58,8 +57,8 @@ public function index(): Response{
     # Récupération des enregistrements dans la base
 
     $property = $this->repository->findAllVisible();
-    #$property[0]->setSold(true);
-    #$this->om->flush();
+    $property[0]->setSold(true);
+    $this->om->flush();
 
     return $this->render('property/index.html.twig', ['current_menu'=>'properties']);
 
