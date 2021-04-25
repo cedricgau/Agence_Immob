@@ -3,7 +3,8 @@
 {% block body %}
 <div class="jumbotron text-center">
 <h1>Agence lorem ipsum</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit est nulla similique maiores, modi beatae iusto eaque impedit nam animi autem, facilis dolores vero nobis. Qui neque culpa quibusdam animi.   <p/>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit est nulla similique maiores, modi beatae iusto eaque impedit nam animi autem, facilis dolores vero nobis. 
+Qui neque culpa quibusdam animi.</p>
 </div>
 <div class="container">
 <h2>Les derniers biens</h2>
@@ -16,7 +17,7 @@
 <a href="#">{{ property.title }}</a>
 </h5>
 <p class="czrd-text">{{ property.city }} ({{ property.postalCode }})</p>
-<div class="text-primary">{{ property.price }}</div>
+<div class="text-primary" style="font-weight: bold; font-size: 2rem;">{{ property.formattedPrice }} €</div>
 </div>
 </div>
 </div>
