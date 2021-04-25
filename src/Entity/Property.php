@@ -13,7 +13,7 @@ use Cocur\Slugify\Slugify;
 class Property
 {
 
-    const HEAT = [0 => 'gaz', 1 => 'electric', 2 => 'fuel', 3 => 'charbon de bois', 4 => 'autre' ];
+    const HEAT = [0 => 'Gaz', 1 => 'Electric', 2 => 'Fuel', 3 => 'Charbon de bois', 4 => 'Autre' ];
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -203,6 +203,11 @@ class Property
         $this->heat = $heat;
 
         return $this;
+    }
+
+    public function getHeatType(): string
+    {
+        return self::HEAT[$this->heat];
     }
 
     public function getCity(): ?string
