@@ -55,10 +55,11 @@ public function index(): Response{
     #    $em->flush();
 
     # Récupération des enregistrements dans la base
+    # $property = $this->repository->findAllVisible();
 
-    $property = $this->repository->findAllVisible();
-    $property[0]->setSold(true);
-    $this->om->flush();
+    # Update exemple
+    # $property[0]->setSold(true);
+    #$this->om->flush();
 
     return $this->render('property/index.html.twig', ['current_menu'=>'properties']);
 
