@@ -1,28 +1,29 @@
 {% extends 'base.html.twig' %}
-{% block title 'Agence lorem ipsum'%}
+{% block title 'Gérer les biens'%}
 {% block body %}
-<div class="jumbotron text-center">
-<h1>Agence lorem ipsum</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit est nulla similique maiores, modi beatae iusto eaque impedit nam animi autem, facilis dolores vero nobis. 
-Qui neque culpa quibusdam animi.</p>
-</div>
-<div class="container">
-<h2>Les derniers biens</h2>
-<div class="row flex">
+<div class="container mt-4">
+<h1>Gérer les biens</h1>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Titre</th>
+<th>Actions</th>
+</tr>
+</thead>
+</table>
+<tbody>
+
 {% for property in properties %}
-<div class="col-3">
-<div class="card">
-<div class="card-body">
-<h5 class="czrd-title">
-<a href="{{ path('property.show', {id: property.id, slug: property.slug }) }}">{{ property.title }}</a>
-</h5>
-<p class="czrd-text">{{ property.city }} ({{ property.postalCode }})</p>
-<div class="text-primary" style="font-weight: bold; font-size: 2rem;">{{ property.formattedPrice }} €</div>
-</div>
-</div>
-</div>
+<tr>
+<td>{{ property.title }}</td>
+<td>
+<a href="{{ path('admin.property.edit', {id: property.id}) }}" class="btn btn-secondary">Editer</a>
+</td>
+</tr>
+
 {% endfor %}
-</div>
+</tbody>
+</table>
 </div>
 
 {% endblock %}
