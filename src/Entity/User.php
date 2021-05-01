@@ -80,11 +80,11 @@ class User implements UserInterface,\Serializable
     }
     public function unserialize($serialized)
     {
-        list(
+        list (
             $this->id,
             $this->username,
             $this->password
-        )= unserialize($serialized, ['allowed_classes' => false]);
+        ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
 }
