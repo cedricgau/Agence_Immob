@@ -64,9 +64,14 @@ public function index(PaginatorInterface $paginator, Request $request): Response
     # Update exemple
     # $property[0]->setSold(true);
     #$this->om->flush();
+
+    // Créer une entité qui va représenter notre recherche
+    //Créer un formulaire
+    //Gérer le traitement dans le controller
+    
     $properties = $paginator->paginate(
         $this->repository->findAllVisibleQuery(),
-        $request->query->getInt('page', 1),12
+        $request->query->getInt('page',1),12
     );
     return $this->render('property/index.html.twig', ['current_menu'=>'properties', 'properties' => $properties]);
 
