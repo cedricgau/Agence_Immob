@@ -39,8 +39,8 @@ public function index(): Response{
 
     # Saisi et enregistrement dans la base
 
-    #$property = new Property();
-    #$property->setTitle('Mon premier bien')
+    # $property = new Property();
+    # $property->setTitle('Mon premier bien')
     #    ->setPrice(200000)
     #    ->setRooms(4)
     #    ->setBedrooms(3)
