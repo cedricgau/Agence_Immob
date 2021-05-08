@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title 'Tous nos biens'%}
 {% block body %}
-<div class="jumbotron mt-4">
+<div class="jumbotron">
         <div class="container">
                 {{ form_start(form) }}
                 <div class="row align-items-end">
@@ -10,6 +10,9 @@
                         </div>
                         <div class="col">
                                 {{ form_row(form.maxPrice) }}
+                        </div>
+                         <div class="col">
+                                {{ form_row(form.options) }}
                         </div>
                         <div class="col">
                                 <div class="form-group">

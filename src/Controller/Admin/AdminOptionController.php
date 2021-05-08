@@ -72,7 +72,7 @@ class AdminOptionController extends AbstractController
      */
     public function delete(Request $request, Option $option): Response
     {
-        if ($this->isCsrfTokenValid('/admin/delete'.$option->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('/admin/delete'.$option->getId(), $request->request->get('_token'))) { // peut être mettre que 'delete'
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($option);
             $entityManager->flush();
