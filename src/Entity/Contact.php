@@ -26,7 +26,8 @@ class Contact{
      * @var string|null
      * @Assert\NotBlank()
      * @Assert\Regex(
-     * pattern="/[0-9]{10}/")
+     * pattern="/[0-9]{10}/"
+     * )
      */
 
     private $phone;
