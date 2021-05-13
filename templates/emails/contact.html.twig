@@ -1,58 +1,34 @@
+<!DOCTYPE html>
 <html>
-<body>
-<table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="" width="600">
-<tr>
-<td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-<div style="">
-<table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="">
-<tbody>
-<tr>
-<td style="">
-<table border="0" cellpadding="0" cellspacing="0" role="presentation">
-<tr>
-<td class="" style="vertical-align:top;width:600px;">
-<div class="mj-colunm-per-100 outlook-group-fix" style="">
-<table border="0" cellpadding="0" cellspacing="0" style="" role="presentation" width="100%">
-<tr>
-<td align="left" style="">
-<table border="0" cellpadding="0" cellspacing="0" style="" width="100%">
-<tr>
-<td style="">Nom du bien :</td>
-<td><a href="{{ url('property.show', {id: contact.property.id, slug: contact.property.slug}) }}">{{ contact.property.title }}</a></td>
-</tr>
-<tr>
-<td style="">Prénom</td>
-<td>{{ contact.firstname }}</td>
-</tr>
-<tr>
-<td style="">Nom</td>
-<td>{{ contact.lastname }}</td>
-</tr>
-<tr>
-<td style="">Téléphone</td>
-<td>{{ contact.phone }}</td>
-</tr>
-<tr>
-<td style="">Email</td>
-<td>{{ contact.email }}</td>
-</tr>
-<tr>
-<td style="">Message</td>
-<td>{{ contact.message | nl2br }}
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</body>
+    <head>
+        <title>Bienvenue sur le site de Ma super agence</title>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <header>
+            <h1>Ma Super Agence</h1>
+            <p>Site créé par Cédric Gautier</p>
+        </header>
+        <nav>
+            <ul>
+                <li>Nom du bien :<a href="{{ url('property.show', {id: contact.property.id, slug: contact.property.slug}) }}">{{ contact.property.title }}</a></li>                
+            </ul>
+        </nav>
+        <section>
+            <aside>
+                <h1>Identité de l'expéditeur</h1>
+                <p>Prénom : {{ contact.firstname }}</p>
+                <p>Nom : {{ contact.lastname }}</p>
+                <p>Téléphone : {{ contact.phone }}</p>
+                <p>Email : {{ contact.email }}</p>                
+            </aside>
+            <article>               
+                <h1>Message</h1>
+                <p>{{ contact.message | nl2br }}</p>
+            </article>
+        </section>
+<footer>
+            <p>Copyright Cédric Gautier - Tous droits réservés</p>
+        </footer>
+    </body>
 </html>
