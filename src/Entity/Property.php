@@ -66,7 +66,10 @@ class Property
      * @ORM\Column(type="integer")
      */
     private $rooms;
-
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $bedrooms;
     /**
      * @ORM\Column(type="integer")
      */
@@ -114,11 +117,7 @@ class Property
         $this->options = new ArrayCollection();       
     }
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $bedrooms;
-
+    
     /**
      * @ORM\ManyToMany(targetEntity=Option::class, inversedBy="properties")
      */
@@ -127,11 +126,7 @@ class Property
     /**
      * @ORM\Column(type="datetime")
      */
-    private $updated_at;
-
-    
-
-    
+    private $updated_at;    
 
     public function getId(): ?int
     {
