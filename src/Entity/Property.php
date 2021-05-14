@@ -119,7 +119,7 @@ class Property
 
     
     /**
-     * @ORM\ManyToMany(targetEntity=Option::class, inversedBy="properties")
+     * @ORM\ManyToMany(targetEntity=Option::class, inversedBy="properties", fetch="EAGER")
      */
     private $options;
 
