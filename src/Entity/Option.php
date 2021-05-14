@@ -26,7 +26,7 @@ class Option
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Property::class, mappedBy="options")
+     * @ORM\ManyToMany(targetEntity=Property::class, mappedBy="options", fetch="EAGER")
      */
     private $properties;
 
