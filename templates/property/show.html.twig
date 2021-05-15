@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block title property.title %}
 
 {% block body %}
@@ -17,14 +16,13 @@
     {% endif %}
         <div class="row">
             <div class="col-md-8">
-                
+              <div data-slider>  
                 {% if property.filename %}
                     <img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%; height:auto;">
                 {% else %}
                     <img src="{{ '/images/properties/empty.jpg' | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%; height:auto;">
-                
                 {% endif %}
-            
+                </div>
             </div>
             <div class="col-md-4">
                 <h1>{{ property.title }} </h1>
@@ -41,10 +39,7 @@
                         <div class="col">{{ form_row(form.phone) }}</div>
                         <div class="col">{{ form_row(form.email) }}</div>
                     </div>                    
-                    {{ form_rest(form) }}
-                    <div class="form-group">
-                        <button class="btn btn-primary">Envoyer</button>
-                    </div>
+                    {{ form_rest(form) }}                    
                     {{ form_end(form) }}
                 </div>
             </div>

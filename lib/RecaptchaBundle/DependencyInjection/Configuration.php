@@ -7,9 +7,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface {
 
-/**
- * @return \Symfony\Component\Config\Definition\Builder\TreeBuilder The tree builder
- */
+
 
 public function getConfigTreeBuilder()
 {
@@ -18,10 +16,12 @@ public function getConfigTreeBuilder()
     $treeBuilder->getRootNode()
         ->children()
             ->scalarNode('key')
-                ->isRequired()        
+                ->isRequired()
+                ->cannotBeEmpty()        
             ->end()
             ->scalarNode('secret')
-                ->isRequired()        
+                ->isRequired()
+                ->cannotBeEmpty()          
             ->end()  
         ->end()    
     ;

@@ -1,5 +1,6 @@
+
 {% block recaptcha_submit_widget %}
-    <script src="https://www.google.com/recaptcha/api.js" async defer>
+<script src="https://www.google.com/recaptcha/api.js" async defer>
     
    function RecaptchaSubmit(token) {
      var elem = document.getElementById('{{ id }}');
@@ -13,6 +14,5 @@
    }
  </script>
 <div class="g-recaptcha" data-sitekey="6Lf-1tQaAAAAAKBPM1uHBh8l73ZoPQytZgjxPEo-" data-callback="RecaptchaSubmit"></div>
-
-   
+    
 {% endblock %}
